@@ -1,4 +1,4 @@
-# Sistema de Cadastro de Clientes
+# 👤 Sistema de Cadastro de Clientes
 
 Sistema web desenvolvido para gerenciamento de clientes, permitindo realizar operações completas de cadastro, consulta, edição e exclusão de dados (CRUD). O projeto foi criado utilizando PHP, MySQL, HTML, CSS e JavaScript, com foco na integração entre front-end e back-end.
 
