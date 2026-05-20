@@ -45,6 +45,8 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
  ┣ 📂 views
  ┣ 📜 README.md
 
+---
+
 ## 📖 Aprendizados
 - **Operações CRUD utilizando PHP**
 - **Integração entre front-end e back-end**
