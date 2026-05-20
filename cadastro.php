@@ -1,4 +1,3 @@
 <?php
-header("Location: cadastrar.php");
-exit;
-?>
+require __DIR__ . '/src/controllers/cadastrar.php';
+
