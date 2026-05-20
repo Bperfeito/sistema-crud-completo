@@ -25,11 +25,11 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
 
 ## 🛠️ Tecnologias Utilizadas
 
-- **PHP**
-- **MySQL**
-- **HTML5**
-- **CSS3**
-- **JavaScript**
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" width="40" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" width="40" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html/html-original.svg" width="40" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css/css-original.svg" width="40" />
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="40" />
 
 ---
 
