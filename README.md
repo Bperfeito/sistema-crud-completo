@@ -33,7 +33,7 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
 
 
 ---
-
+``` bash
 ## 📂 Estrutura do Projeto
 
 
