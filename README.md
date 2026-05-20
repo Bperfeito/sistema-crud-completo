@@ -31,6 +31,14 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
 - **CSS3**
 - **JavaScript**
 
+---
+
+## 📖 Aprendizados
+- **Operações CRUD utilizando PHP**
+- **Integração entre front-end e back-end**
+- **Manipulação e validação de formulários com JavaScript**
+- **Estruturação de páginas com HTML semântico**
+- **Estilização responsiva com CSS**
 
 ---
 ``` bash
@@ -46,13 +54,6 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
  ┣ 📜 README.md
 
 ---
-
-## 📖 Aprendizados
-- **Operações CRUD utilizando PHP**
-- **Integração entre front-end e back-end**
-- **Manipulação e validação de formulários com JavaScript**
-- **Estruturação de páginas com HTML semântico**
-- **Estilização responsiva com CSS**
 
 ## 👨‍💻 Autor
 Desenvolvido por Brunno Perfeito 🚀
