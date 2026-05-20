@@ -36,7 +36,7 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
 
 ## 📂 Estrutura do Projeto
 
-```bash
+
 📦 sistema-cadastro-clientes
  ┣ 📂 assets
  ┣ 📂 config
@@ -44,8 +44,6 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
  ┣ 📂 models
  ┣ 📂 views
  ┣ 📜 README.md
-
- ```bash
 
 ---
 
