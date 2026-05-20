@@ -45,6 +45,8 @@ Este projeto foi desenvolvido como atividade acadêmica para aplicação dos con
  ┣ 📂 views
  ┣ 📜 README.md
 
+ ```bash
+
 ---
 
 ## 📖 Aprendizados
