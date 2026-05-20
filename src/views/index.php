@@ -15,6 +15,8 @@ $totalClientes = count($clientes);
 $erroConsulta = $resultado === false ? $conn->error : "";
 $arquivoEdicaoExiste = file_exists(__DIR__ . "/editar.php");
 $clientesHome = array_slice($clientes, 0, 5);
+$homeCssVersion = filemtime(__DIR__ . "/../../assets/style/home.css");
+$homeJsVersion = filemtime(__DIR__ . "/../../assets/js/home.js");
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +27,7 @@ $clientesHome = array_slice($clientes, 0, 5);
     <title>Sistema de Cadastro - Home</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="shortcut icon" href="./assets/favicon/favicon4.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/style/home.css">
+    <link rel="stylesheet" href="./assets/style/home.css?v=<?php echo $homeCssVersion; ?>">
 </head>
 <body class="home-page">
     <header class="home-header">
@@ -80,9 +82,18 @@ $clientesHome = array_slice($clientes, 0, 5);
                     <p>Total de clientes</p>
                     <strong><?php echo $totalClientes; ?></strong>
                 </article>
-                <article class="home-stat-card">
-                    <p>Atualizado em</p>
-                    <strong><?php echo date("d/m/Y H:i"); ?></strong>
+                <article class="home-stat-card home-search-card">
+                    <div class="home-search-control">
+                        <input
+                            type="text"
+                            id="homeSearchInput"
+                            class="home-search-input"
+                            placeholder="Pesquisar cliente..."
+                            aria-label="Pesquisar cliente na Home"
+                            autocomplete="off"
+                        >
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    </div>
                 </article>
             </div>
 
@@ -98,7 +109,7 @@ $clientesHome = array_slice($clientes, 0, 5);
                 </div>
             <?php else: ?>
                 <div class="home-table-wrap">
-                    <table class="home-table">
+                    <table class="home-table" data-search-table="home">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -119,6 +130,7 @@ $clientesHome = array_slice($clientes, 0, 5);
                         </tbody>
                     </table>
                 </div>
+                <p class="home-search-empty" data-search-empty="home" hidden>Nenhum cliente encontrado para esta pesquisa.</p>
             <?php endif; ?>
 
             <div class="home-actions">
@@ -142,8 +154,22 @@ $clientesHome = array_slice($clientes, 0, 5);
                     <p>Cadastre um cliente para preencher esta lista.</p>
                 </div>
             <?php else: ?>
+                <div class="home-search-wrap">
+                    <div class="home-search-control">
+                        <input
+                            type="text"
+                            id="listaSearchInput"
+                            class="home-search-input"
+                            placeholder="Pesquisar cliente..."
+                            aria-label="Pesquisar cliente na lista da Home"
+                            autocomplete="off"
+                        >
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                    </div>
+                </div>
+
                 <div class="home-table-wrap">
-                    <table class="home-table">
+                    <table class="home-table" data-search-table="lista">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -182,6 +208,7 @@ $clientesHome = array_slice($clientes, 0, 5);
                         </tbody>
                     </table>
                 </div>
+                <p class="home-search-empty" data-search-empty="lista" hidden>Nenhum cliente encontrado para esta pesquisa.</p>
             <?php endif; ?>
         </section>
 
@@ -203,6 +230,6 @@ $clientesHome = array_slice($clientes, 0, 5);
         </footer>
     </main>
 
-    <script src="./assets/js/home.js"></script>
+    <script src="./assets/js/home.js?v=<?php echo $homeJsVersion; ?>"></script>
 </body>
 </html>

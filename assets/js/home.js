@@ -20,6 +20,60 @@ navButtons.forEach((button) => {
     });
 });
 
+function normalizeText(value) {
+    return value
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "");
+}
+
+function configureTableSearch({ inputId, tableSelector, emptySelector }) {
+    const input = document.getElementById(inputId);
+    const table = document.querySelector(tableSelector);
+    const emptyState = document.querySelector(emptySelector);
+
+    if (!input || !table) {
+        return;
+    }
+
+    const rows = Array.from(table.querySelectorAll("tbody tr"));
+
+    function applyFilter() {
+        const searchValue = normalizeText(input.value.trim());
+        let visibleRows = 0;
+
+        rows.forEach((row) => {
+            const rowText = normalizeText(row.textContent || "");
+            const showRow = rowText.includes(searchValue);
+
+            row.hidden = !showRow;
+
+            if (showRow) {
+                visibleRows += 1;
+            }
+        });
+
+        if (emptyState) {
+            emptyState.hidden = visibleRows !== 0;
+        }
+    }
+
+    input.addEventListener("input", applyFilter);
+    applyFilter();
+}
+
+configureTableSearch({
+    inputId: "homeSearchInput",
+    tableSelector: '[data-search-table="home"]',
+    emptySelector: '[data-search-empty="home"]',
+});
+
+configureTableSearch({
+    inputId: "listaSearchInput",
+    tableSelector: '[data-search-table="lista"]',
+    emptySelector: '[data-search-empty="lista"]',
+});
+
 if (logoutButton) {
     logoutButton.addEventListener("click", () => {
         const canExit = window.confirm("Deseja realmente sair do sistema?");

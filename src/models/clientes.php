@@ -14,6 +14,8 @@ if ($resultado instanceof mysqli_result) {
 $totalClientes = count($clientes);
 $erroConsulta = $resultado === false ? $conn->error : "";
 $arquivoEdicaoExiste = file_exists(__DIR__ . "/../views/editar.php");
+$clientesCssVersion = filemtime(__DIR__ . "/../../assets/style/clientes.css");
+$clientesJsVersion = filemtime(__DIR__ . "/../../assets/js/clientes.js");
 ?>
 
 <!DOCTYPE html>
@@ -24,7 +26,7 @@ $arquivoEdicaoExiste = file_exists(__DIR__ . "/../views/editar.php");
     <title>Lista de Clientes</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css">
     <link rel="shortcut icon" href="./assets/favicon/favicon4.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/style/clientes.css">
+    <link rel="stylesheet" href="./assets/style/clientes.css?v=<?php echo $clientesCssVersion; ?>">
 </head>
 <body class="clientes-page">
     <header class="clientes-header">
@@ -72,6 +74,20 @@ $arquivoEdicaoExiste = file_exists(__DIR__ . "/../views/editar.php");
                 </div>
             </div>
 
+            <div class="clientes-search-wrap">
+                <div class="clientes-search-control">
+                    <input
+                        type="text"
+                        id="clientesSearchInput"
+                        class="clientes-search-input"
+                        placeholder="Pesquisar cliente..."
+                        aria-label="Pesquisar cliente na lista"
+                        autocomplete="off"
+                    >
+                    <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                </div>
+            </div>
+
             <?php if ($erroConsulta !== ""): ?>
                 <div class="feedback feedback-error" role="alert">
                     <i class="fa-solid fa-circle-exclamation" aria-hidden="true"></i>
@@ -86,7 +102,7 @@ $arquivoEdicaoExiste = file_exists(__DIR__ . "/../views/editar.php");
                 </div>
             <?php else: ?>
                 <div class="table-wrap">
-                    <table class="clientes-table">
+                    <table class="clientes-table" data-search-table="clientes">
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -125,8 +141,11 @@ $arquivoEdicaoExiste = file_exists(__DIR__ . "/../views/editar.php");
                         </tbody>
                     </table>
                 </div>
+                <p class="clientes-search-empty" id="clientesSearchEmpty" hidden>Nenhum cliente encontrado para esta pesquisa.</p>
             <?php endif; ?>
         </section>
     </main>
+
+    <script src="./assets/js/clientes.js?v=<?php echo $clientesJsVersion; ?>"></script>
 </body>
 </html>

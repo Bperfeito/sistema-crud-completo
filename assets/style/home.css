@@ -211,6 +211,70 @@ body.home-page {
     color: #f8fafc;
 }
 
+.home-search-card {
+    display: flex;
+    align-items: center;
+}
+
+.home-search-control {
+    width: 100%;
+    max-width: 420px;
+    position: relative;
+    border-radius: 11px;
+    border: 1px solid rgba(148, 163, 184, 0.36);
+    background: #f8fafc;
+    padding: 0;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.home-search-input {
+    width: 100%;
+    display: block;
+    border: 0;
+    border-radius: 11px;
+    padding: 11px 42px 11px 14px;
+    font: inherit;
+    font-size: 1rem;
+    color: #1e293b;
+    background: transparent;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+.home-search-input::placeholder {
+    color: #64748b;
+}
+
+.home-search-input:focus {
+    outline: none;
+}
+
+.home-search-control:focus-within {
+    background: #ffffff;
+    border-color: rgba(14, 116, 144, 0.75);
+    box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.2);
+}
+
+.home-search-control i {
+    color: #334155;
+    font-size: 1rem;
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.home-search-wrap {
+    margin-top: 16px;
+}
+
+.home-search-empty {
+    margin-top: 12px;
+    font-size: 0.9rem;
+    color: #bfdbfe;
+}
+
 .home-feedback {
     margin-top: 16px;
     border-radius: 12px;
