@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Sora:wght@500;700&display=swap");
+
+:root {
+    --bg-start: #0f172a;
+    --bg-end: #1d4ed8;
+     --card-bg: rgba(250, 252, 255, 0.94); 
+    --title: #0b1020;
+    --text: #334155;
+    --muted: #64748b;
+    --primary: #0f766e;
+    --primary-hover: #115e59;
+    --border: #cbd5e1;
+    --focus: rgba(15, 118, 110, 0.22);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body.cadastro-page {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Manrope", "Segoe UI", sans-serif;
+    color: var(--text);
+    background:
+        radial-gradient(circle at 20% 20%, rgba(34, 211, 238, 0.35), transparent 38%),
+        radial-gradient(circle at 80% 10%, rgba(248, 113, 113, 0.32), transparent 34%),
+        linear-gradient(130deg, var(--bg-start), var(--bg-end));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+.cadastro-wrapper {
+    width: 100%;
+    max-width: 460px;
+}
+
+.cadastro-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 18px;
+    padding: 28px;
+    backdrop-filter: blur(4px);
+    box-shadow: 0 18px 40px rgba(2, 6, 23, 0.35);
+}
+
+.cadastro-header {
+    margin-bottom: 22px;
+}
+
+.cadastro-kicker {
+    margin: 0;
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.cadastro-header h1 {
+    margin: 8px 0 8px;
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--title);
+}
+
+
+.cadastro-header p {
+    margin: 0;
+    padding: 0;
+    font-size: 0.96rem;
+    color: var(--muted);
+}
+
+.cadastro-form {
+    display: grid;
+    gap: 12px;
+}
+
+.cadastro-form label {
+    font-size: 0.92rem;
+    font-weight: 700;
+    color: var(--title);
+}
+
+.cadastro-form input {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 14px;
+    width: 100%;
+    font: inherit;
+    color: var(--title);
+    background-color: #fff;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cadastro-form input.input-with-icon {
+    display: block;
+    width: 100%;
+    padding-left: 42px;
+}
+
+.field-with-icon {
+    position: relative;
+    width: 100%;
+}
+
+.field-with-icon i {
+    position: absolute;
+    left: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.95rem;
+    color: #94a3b8;
+    pointer-events: none;
+    transition: color 0.2s ease;
+}
+
+.field-with-icon:focus-within i {
+    color: var(--primary);
+}
+
+.cadastro-form input::placeholder {
+    color: #94a3b8;
+}
+
+.cadastro-form input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px var(--focus);
+}
+
+.cadastro-form button {
+    margin-top: 8px;
+    border: 0;
+    border-radius: 10px;
+    padding: 12px 14px;
+    font-family: "Sora", "Segoe UI", sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(120deg, #0f766e, #0e7490);
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.cadastro-form button:hover {
+    transform: translateY(-1px);
+    background: linear-gradient(120deg, var(--primary-hover), #0369a1);
+    box-shadow: 0 10px 18px rgba(15, 118, 110, 0.28);
+}
+
+.cadastro-form button:active {
+    transform: translateY(0);
+}
+
+.voltar-link {
+    margin-top: 4px;
+    justify-self: center;
+    font-size: 0.9rem;
+    color: #155e75;
+    text-decoration: none;
+    border-bottom: 1px dashed currentColor;
+}
+
+.voltar-link:hover {
+    color: #0c4a6e;
+}
+
+@media (max-width: 520px) {
+    body.cadastro-page {
+        padding: 16px;
+    }
+
+    .cadastro-card {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .cadastro-header h1 {
+        font-size: 1.45rem;
+    }
+}
+
+@keyframes panel-enter {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 760px) {
+    body.home-page {
+        padding: 18px;
+    }
+
+    .home-header {
+        align-items: start;
+    }
+
+    .home-nav {
+        width: 100%;
+    }
+
+    .nav-item {
+        flex: 1 1 220px;
+        text-align: center;
+    }
+
+    .home-panel {
+        padding: 22px;
+    }
+}
